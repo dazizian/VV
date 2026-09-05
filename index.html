@@ -187,8 +187,6 @@
           <li><strong>CTRL+ALT+DELUSION</strong> (10th) — its only slot overlaps the mandatory Diva Goes West</li>
           <li><strong>Double Trouble</strong> (4th) — missed, no second sitting exists anywhere in the lineup</li>
         </ul>
-        <h4 style="margin-top:1rem;">Worth confirming</h4>
-        <p><strong>Red Hot</strong> is marked must-attend in your spreadsheet, but it's been absent from every day's screenshots we've cross-checked this voyage — it may have been dropped from the lineup entirely.</p>
       </div>
     </div>
   </div>
@@ -221,7 +219,8 @@ const days = [
       {time:"6:30 PM", title:"Peach & Bourbon Duo", sub:"On The Rocks, Deck 6", type:"flexible", tag:"Flexible", note:"Any time in the 18:30–19:15 window."},
       {time:"7:15 PM", title:"Duel Reality", sub:"The Manor, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 19:15 for the 19:30 start — clears well before dinner."},
       {time:"8:45 PM", title:"Dinner — Extra Virgin", sub:"All 9 · confirmed, unchanged", type:"dining"},
-      {time:"10:00 PM", title:"Karaoke with the Happenings Cast", sub:"The Social Club, Deck 7", type:"flexible", tag:"Flexible", note:"Any time in the 22:00–00:00 window."}
+      {time:"10:00 PM", title:"Karaoke with the Happenings Cast", sub:"The Social Club, Deck 7", type:"flexible", tag:"Flexible", note:"Any time in the 22:00–00:00 window."},
+      {time:"11:00 PM", title:"Electric", sub:"The Manor, Deck 6", type:"flexible", tag:"Flexible", note:"This had been missing entirely from an earlier pass. Any time in the 23:00–01:00 window — overlaps Karaoke, but both are flexible so you can move between them."}
     ],
     missed:[
       "Primetime Ports (10:30) — overlaps mandatory Seas the Knowledge, no other sitting",
@@ -232,17 +231,19 @@ const days = [
   {
     id:5, weekday:"Saturday", label:"Sitka", port:"In port 12:00 PM – 8:00 PM", aboard:"All aboard 7:30 PM",
     entries:[
+      {time:"10:15 AM", title:"Seas the Knowledge: Progressive Trivia", sub:"The Social Club, Deck 7", type:"mandatory", tag:"Mandatory", note:"Arrive 10:15 for the 10:30 start. This was missing from the site before — it's genuinely mandatory, same as the 4th, 8th, and 10th."},
       {time:"12:15 PM", title:"Shuttle to Downtown Sitka", sub:"Sitka Sound Cruise Terminal → Harrigan Centennial Hall · ~12 min", type:"excursion", tag:"Timed", note:"Catching the 12:15–12:30 shuttle window."},
       {time:"12:30 PM", title:"Explore Downtown Sitka", sub:"St. Michael's Cathedral, Lincoln Street, the harbor", type:"flexible", tag:"Flexible", note:"Roughly 75–90 minutes in town — enough for the Cathedral and a wander. The National Historical Park is a stretch given the shuttle timing."},
       {time:"1:45 PM", title:"Shuttle back to the port", sub:"~12 min ride", type:"excursion", tag:"Timed", note:"Board by 1:45 to be back with room to spare before the 2:15 meeting time."},
       {time:"2:15 PM", title:"Shore Thing: Discover Fortress of the Bear", sub:"Meet at the port · runs 2:30–4:15", type:"excursion", note:"You meet at the port 15 minutes before the 2:30 start — this is that meeting time."},
       {time:"5:30 PM", title:"Dinner — Rojo", sub:"All 9 · confirmed, unchanged", type:"dining"},
       {time:"7:30 PM", title:"Murder in the Manor", sub:"The Manor, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 19:30 for the 20:00 start — using the later sitting since dinner is staying at 17:30."},
-      {time:"9:15 PM", title:"Salty Trivia: Silver Screen Smarty Pants", sub:"The Social Club, Deck 7", type:"mandatory", tag:"Timed", note:"Arrive 21:15 for the 21:30 start — using the 5th's sitting instead of the 4th's."}
+      {time:"9:45 PM", title:"Red Hot", sub:"The Red Room, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 21:45 for the 22:00 start — using the later sitting. The earlier sitting collides with Murder in the Manor (also must-attend); both 8th sittings collide with other bookings there."}
     ],
     missed:[
       "Salty Trivia: Celebrity Scoop (17:30) — overlaps the Rojo dinner, no way around it",
-      "Crack the Crab, Pop Quiz: 80s Music Trivia — squeezed out once Murder in the Manor moved to the later sitting"
+      "Crack the Crab, Pop Quiz: 80s Music Trivia — squeezed out once Murder in the Manor moved to the later sitting",
+      "Salty Trivia: Silver Screen Smarty Pants — squeezed out once Red Hot took the later evening sitting"
     ]
   },
   {
@@ -251,6 +252,7 @@ const days = [
       {time:"9:30 AM", title:"Shore Thing: Alaska Ocean Raft Wildlife Adventure", sub:"Runs to 11:30", type:"excursion"},
       {time:"3:15 PM", title:"Golden Hour (trimmed)", sub:"The Dock House, Deck 7", type:"flexible", tag:"Flexible", note:"Leave by 4:45 to make the glacier workshop."},
       {time:"4:45 PM", title:"Naturalist Workshop: How To Read A Glacier", sub:"The Scene, Deck 15", type:"mandatory", tag:"Timed", note:"Arrive 16:45 for the 17:00 start — kept over Salty Trivia: TV Temptations given your past interest in this one."},
+      {time:"6:30 PM", title:"Guest Artist: Flute Loops", sub:"The Roundabout, Deck 6", type:"flexible", tag:"Flexible", note:"This had been missing entirely from an earlier pass. Fits cleanly in the gap before Duets — any time in the 18:30–19:15 window."},
       {time:"7:30 PM", title:"Duets", sub:"The Manor, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 19:30 for the 20:00 start — using the second sitting."},
       {time:"8:45 PM", title:"Dinner — Pink Agave", sub:"All 9 · confirmed, unchanged", type:"dining", note:"The 15-minute grace period comfortably covers the walk over after Duets ends at 20:45."},
       {time:"9:45 PM", title:"Out Of Time", sub:"The Red Room, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 21:45 for the 22:00 start — using the second sitting to stay clear of Duets and dinner."},
@@ -309,7 +311,7 @@ const days = [
     id:10, weekday:"Thursday", label:"Sea day", port:"At sea", aboard:null,
     entries:[
       {time:"10:15 AM", title:"Seas the Knowledge: Progressive Trivia", sub:"The Social Club, Deck 7", type:"mandatory", tag:"Mandatory"},
-      {time:"1:15 PM", title:"Salty Trivia: Know-It-All", sub:"The Social Club, Deck 7", type:"mandatory", tag:"Timed", note:"Arrive 13:15 for the 13:30 start."},
+      {time:"11:45 AM", title:"Pop Quiz: 90s Music Trivia", sub:"The Social Club, Deck 7", type:"mandatory", tag:"Timed", note:"This had been missing entirely from an earlier pass. Arrive 11:45 for the 12:00 start."},
       {time:"3:30 PM", title:"Opa Hour (bonus 3rd sitting, trimmed)", sub:"The Dock House, Deck 7", type:"flexible", tag:"Flexible", note:"Optional — you already have two sittings from the 7th and 8th."},
       {time:"4:30 PM", title:"Salty Trivia: Alaska Edition", sub:"On The Rocks, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 16:30 for the 17:00 start. Same time as The Voyager's Collection: The Search — Alaska Edition wins as the mandatory one."},
       {time:"6:30 PM", title:"The Diva Goes West", sub:"The Manor, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 18:30 for the 19:00 start. This is why CTRL+ALT+DELUSION can't be attended."},
@@ -320,7 +322,8 @@ const days = [
     ],
     missed:[
       "CTRL+ALT+DELUSION (19:00) — overlaps mandatory The Diva Goes West",
-      "The Voyager's Collection: The Search (16:30) — lost to the mandatory Salty Trivia: Alaska Edition, no other sitting left"
+      "The Voyager's Collection: The Search (16:30) — lost to the mandatory Salty Trivia: Alaska Edition, no other sitting left",
+      "Salty Trivia: Know-It-All — already booked on the 8th; your spreadsheet asked for only one, so this sitting is dropped"
     ]
   },
   {
