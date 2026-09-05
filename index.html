@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#FAFCFB">
 <title>Brilliant Lady · Alaska, 3–11 Sept</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
+    color-scheme: light;
     --ink:#0E2630;
     --fjord:#1F5C6B;
     --mist:#EDF3F2;
@@ -20,32 +24,35 @@
     --line: rgba(14,38,48,0.12);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; background-color:#FAFCFB !important;}
   body{
     margin:0;
-    background:var(--paper);
-    color:var(--ink);
+    background-color:#FAFCFB !important;
+    color:#0E2630;
     font-family:'Inter',system-ui,sans-serif;
     font-feature-settings:"tnum" 1, "lnum" 1;
     -webkit-font-smoothing:antialiased;
   }
+  main, #dayPanels, .day{background-color:#FAFCFB !important;}
+  .timeline, .entry-body, .entry{background-color:#FAFCFB !important;}
+  .entry.dining .entry-body{background-color:#EDF3F2 !important;}
   h1,h2,h3{font-family:'Fraunces',Georgia,serif; margin:0; font-weight:600;}
 
-  .masthead{background:var(--ink); color:var(--mist); padding:2.2rem 1.5rem 1.6rem;}
+  .masthead{background-color:#0E2630 !important; color:#EDF3F2; padding:2.2rem 1.5rem 1.6rem;}
   .masthead-inner{max-width:920px; margin:0 auto;}
   .masthead .kicker{font-size:0.8rem; letter-spacing:0.02em; color:var(--aurora); margin-bottom:0.35rem; font-weight:500;}
   .masthead h1{font-size:clamp(1.8rem, 5vw, 2.6rem); line-height:1.1; color:#fff;}
-  .masthead .dates{margin-top:0.4rem; font-size:0.95rem; color:rgba(237,243,242,0.75);}
+  .masthead .dates{margin-top:0.4rem; font-size:0.95rem; color:#FFFFFF;}
   .route{margin-top:1.4rem; display:flex; align-items:center; overflow-x:auto; padding-bottom:0.2rem;}
   .route::-webkit-scrollbar{display:none;}
   .route-stop{display:flex; flex-direction:column; align-items:center; flex-shrink:0; min-width:76px; position:relative;}
   .route-stop .dot{width:8px; height:8px; border-radius:50%; background:var(--aurora); margin-bottom:6px;}
-  .route-stop .label{font-size:0.72rem; color:rgba(237,243,242,0.8); text-align:center; white-space:nowrap;}
+  .route-stop .label{font-size:0.72rem; color:#FFFFFF; text-align:center; white-space:nowrap;}
   .route-line{flex:1; height:1px; background:rgba(63,167,150,0.4); min-width:16px; margin-bottom:14px;}
 
-  .sticky-wrap{position:sticky; top:0; z-index:30; background:var(--paper);}
+  .sticky-wrap{position:sticky; top:0; z-index:30; background-color:#FAFCFB !important;}
 
-  .day-tabs{background:var(--paper); border-bottom:1px solid var(--line); display:flex; overflow-x:auto; padding:0 0.5rem;}
+  .day-tabs{background-color:#FAFCFB !important; border-bottom:1px solid var(--line); display:flex; overflow-x:auto; padding:0 0.5rem;}
   .day-tabs::-webkit-scrollbar{display:none;}
   .day-tab{flex-shrink:0; background:none; border:none; font-family:'Inter',sans-serif; cursor:pointer; padding:0.75rem 0.95rem 0.65rem; text-align:left; border-bottom:3px solid transparent; color:rgba(14,38,48,0.55); min-width:80px;}
   .day-tab .num{font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; display:block; color:var(--ink);}
@@ -55,27 +62,27 @@
   .day-tab.active .place{color:var(--signal);}
 
   .now-banner{
-    background:var(--ink);
-    color:var(--paper);
+    background-color:#EDF3F2 !important;
+    color:#0E2630;
     padding:0.6rem 1.2rem;
     display:flex;
     align-items:baseline;
     gap:0.55rem;
     font-size:0.85rem;
-    border-bottom:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid var(--line);
     cursor:pointer;
   }
   .now-banner .pulse{
     width:7px; height:7px; border-radius:50%;
-    background:var(--gold);
+    background:var(--signal);
     align-self:center;
     flex-shrink:0;
     animation:pulse 2.2s infinite;
   }
   @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.3;}}
-  .now-banner .nb-label{color:var(--aurora); font-weight:600; flex-shrink:0;}
-  .now-banner .nb-title{font-weight:600; color:#fff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-  .now-banner .nb-count{color:var(--gold); font-weight:600; margin-left:auto; flex-shrink:0; padding-left:0.5rem;}
+  .now-banner .nb-label{color:var(--fjord); font-weight:700; flex-shrink:0;}
+  .now-banner .nb-title{font-weight:600; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .now-banner .nb-count{color:var(--signal); font-weight:700; margin-left:auto; flex-shrink:0; padding-left:0.5rem;}
 
   .now-marker{position:relative; height:0; margin:1rem 0 1.7rem;}
   .now-marker .now-time{
@@ -107,16 +114,16 @@
   .entry-sub{font-size:0.85rem; color:rgba(14,38,48,0.6); margin-top:0.1rem;}
   .entry-note{font-size:0.83rem; color:var(--fjord); margin-top:0.35rem; padding-left:0.6rem; border-left:2px solid var(--mist-deep); line-height:1.4;}
   .tag{display:inline-block; font-size:0.68rem; font-weight:600; padding:0.12rem 0.5rem; border-radius:2px; margin-left:0.5rem; vertical-align:middle; position:relative; top:-1px;}
-  .tag.mandatory{background:rgba(184,53,46,0.1); color:var(--signal);}
-  .tag.flexible{background:rgba(63,167,150,0.12); color:var(--fjord);}
-  .tag.tight{background:rgba(184,134,11,0.12); color:var(--gold);}
+  .tag.mandatory{background:#F7DEDC; color:#8C231C;}
+  .tag.flexible{background:#D7ECE9; color:#134650;}
+  .tag.tight{background:#F3E4BE; color:#7A5B08;}
 
   .entry.mandatory .dot{background:var(--signal);}
   .entry.dining .dot{background:var(--aurora);}
   .entry.excursion .dot{background:var(--fjord);}
   .entry.flexible .dot{background:var(--mist-deep);}
 
-  .entry.dining .entry-body{background:var(--mist); padding:0.7rem 0.9rem; border-radius:2px;}
+  .entry.dining .entry-body{background-color:#EDF3F2 !important; padding:0.7rem 0.9rem; border-radius:2px;}
 
   .port-divider{position:relative; margin:1.6rem 0; padding-left:2px; display:flex; align-items:center; gap:0.6rem;}
   .port-divider::before{content:""; position:absolute; left:-82px; top:50%; width:68px; border-top:1px dashed var(--fjord);}
@@ -128,15 +135,16 @@
   .missed ul{margin:0; padding-left:1.1rem;}
   .missed li{font-size:0.83rem; color:rgba(14,38,48,0.55); margin-bottom:0.4rem; line-height:1.4;}
 
-  .trip-notes{background:var(--ink); color:var(--mist); margin-top:2rem; padding:2rem 1.2rem 2.6rem;}
+  .trip-notes{background-color:#EDF3F2 !important; color:#0E2630; margin-top:2rem; padding:2rem 1.2rem 2.6rem; border-top:1px solid var(--line);}
   .trip-notes-inner{max-width:760px; margin:0 auto;}
-  .trip-notes h3{color:#fff; font-size:1.15rem; margin-bottom:0.9rem;}
+  .trip-notes h3{color:var(--ink); font-size:1.15rem; margin-bottom:0.9rem;}
   .notes-grid{display:grid; grid-template-columns:1fr; gap:1.6rem;}
   @media(min-width:640px){.notes-grid{grid-template-columns:1fr 1fr;}}
-  .notes-block h4{font-family:'Inter',sans-serif; font-size:0.75rem; font-weight:600; color:var(--aurora); margin:0 0 0.5rem;}
+  .notes-block h4{font-family:'Inter',sans-serif; font-size:0.75rem; font-weight:700; color:var(--fjord); margin:0 0 0.5rem;}
   .notes-block ul{margin:0; padding-left:1.1rem;}
-  .notes-block li{font-size:0.87rem; color:rgba(237,243,242,0.85); margin-bottom:0.45rem; line-height:1.4;}
-  .notes-block p{font-size:0.87rem; color:rgba(237,243,242,0.85); line-height:1.5; margin:0 0 0.5rem;}
+  .notes-block li{font-size:0.87rem; color:rgba(14,38,48,0.8); margin-bottom:0.45rem; line-height:1.4;}
+  .notes-block p{font-size:0.87rem; color:rgba(14,38,48,0.8); line-height:1.5; margin:0 0 0.5rem;}
+  .notes-block strong{color:var(--ink);}
 
   footer{text-align:center; font-size:0.75rem; color:rgba(14,38,48,0.4); padding:1.4rem;}
 </style>
@@ -224,7 +232,10 @@ const days = [
   {
     id:5, weekday:"Saturday", label:"Sitka", port:"In port 12:00 PM – 8:00 PM", aboard:"All aboard 7:30 PM",
     entries:[
-      {time:"2:30 PM", title:"Shore Thing: Discover Fortress of the Bear", sub:"Runs to 4:15", type:"excursion"},
+      {time:"12:15 PM", title:"Shuttle to Downtown Sitka", sub:"Sitka Sound Cruise Terminal → Harrigan Centennial Hall · ~12 min", type:"excursion", tag:"Timed", note:"Catching the 12:15–12:30 shuttle window."},
+      {time:"12:30 PM", title:"Explore Downtown Sitka", sub:"St. Michael's Cathedral, Lincoln Street, the harbor", type:"flexible", tag:"Flexible", note:"Roughly 75–90 minutes in town — enough for the Cathedral and a wander. The National Historical Park is a stretch given the shuttle timing."},
+      {time:"1:45 PM", title:"Shuttle back to the port", sub:"~12 min ride", type:"excursion", tag:"Timed", note:"Board by 1:45 to be back with room to spare before the 2:15 meeting time."},
+      {time:"2:15 PM", title:"Shore Thing: Discover Fortress of the Bear", sub:"Meet at the port · runs 2:30–4:15", type:"excursion", note:"You meet at the port 15 minutes before the 2:30 start — this is that meeting time."},
       {time:"5:30 PM", title:"Dinner — Rojo", sub:"All 9 · confirmed, unchanged", type:"dining"},
       {time:"7:30 PM", title:"Murder in the Manor", sub:"The Manor, Deck 6", type:"mandatory", tag:"Mandatory", note:"Arrive 19:30 for the 20:00 start — using the later sitting since dinner is staying at 17:30."},
       {time:"9:15 PM", title:"Salty Trivia: Silver Screen Smarty Pants", sub:"The Social Club, Deck 7", type:"mandatory", tag:"Timed", note:"Arrive 21:15 for the 21:30 start — using the 5th's sitting instead of the 4th's."}
